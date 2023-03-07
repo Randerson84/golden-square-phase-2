@@ -1,5 +1,5 @@
 def make_snippet (string)
-    split_string = string.split(" ").to_a
+    split_string = string.split(" ")
     if split_string.length >= 5
         return split_string[0..4].join(" ") + "..."
     else
