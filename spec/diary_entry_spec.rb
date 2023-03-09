@@ -11,6 +11,14 @@ RSpec.describe DiaryEntry do
         diary_entry = DiaryEntry.new("numbers", "one two three four five six seven eight nine ten")
         expect(diary_entry.reading_time(30)).to eq 1
     end
+    it "reading_time 2" do
+        diary_entry = DiaryEntry.new("numbers", "one two three four five six seven eight nine ten")
+        expect(diary_entry.reading_time(2)).to eq 5
+    end
+    it "reading_time odd" do
+        diary_entry = DiaryEntry.new("numbers", "one two three four five six seven eight nine")
+        expect(diary_entry.reading_time(2)).to eq 5
+    end
     it "given wpm of 0" do
         diary_entry = DiaryEntry.new("numbers", "one two three four five")
         expect {diary_entry.reading_time(0)}.to raise_error "Reading speed must be above zero."
